@@ -15,8 +15,8 @@
 
 int main(void) {
     /* Insert DDR and PORT initializations */
-	DDRA = 0x00; PORTA = 0x00;
-	DDRB = 0X00; PORTB = 0x00;
+	DDRA = 0x00; PORTA = 0xFF;
+	DDRB = 0X00; PORTB = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00; 
 	unsigned char tmpCnt = 0x0;
 	unsigned char tmpA = 0x0;
@@ -27,13 +27,13 @@ int main(void) {
         tmpA = PINA; 
 	tmpB = PINB;
         
-        while(tmpA != 0x00) {
+        if(tmpA != 0x00) {
             if((tmpA & 0x01) == 1) {
                 tmpCnt = tmpCnt + 0x1;
                 tmpA = tmpA >> 1;
             }	
         }
-        while(tmpB != 0x00) {
+        if(tmpB != 0x00) {
             if((tmpB & 0x01) == 1) {
                 tmpCnt = tmpCnt + 0x1;
                 tmpB = tmpB >> 1;
