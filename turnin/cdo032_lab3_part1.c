@@ -27,6 +27,7 @@ int main(void) {
 
 	tmpA = PINA; 
 	tmpB = PINB;
+	tmpCnt = 0x0;
 
 	for(unsigned i = 0; i < 8; i++) {
 		if((tmpA & 0x01) == 0x1) {
@@ -46,7 +47,7 @@ int main(void) {
         
             
  	
-	PORTD = tmpCnt;
+	PORTC = tmpCnt;
     }
 
 	
