@@ -23,11 +23,11 @@ int main(void) {
 	unsigned char tmpA = 0x0;
 	unsigned char tmpB = 0x0;
 
-	tmpA = PINA; 
-	tmpB = PINB;
-
     /* Insert your solution below */
     while (1) {
+
+	tmpA = PINA; 
+	tmpB = PINB;
         
             if((tmpA & 0x01) == 0x1) {
                 tmpCntA = tmpCntA + 0x1;
