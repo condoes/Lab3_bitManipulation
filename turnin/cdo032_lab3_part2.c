@@ -47,7 +47,7 @@ int main(void) {
             tmpC = 0x3F;
         }
 
-        PORTC = PORTC | tmpC;
+        PORTC = tmpC;
 
     }
     return 1;
