@@ -27,7 +27,7 @@ int main(void) {
 	tmpB = PINB;
 
     /* Insert your solution below */
-    while (tmpA != 0x0 && tmpB != 0x0) {
+    while (1) {
         
             if((tmpA & 0x01) == 0x1) {
                 tmpCntA = tmpCntA + 0x1;
@@ -39,9 +39,9 @@ int main(void) {
                 tmpB = tmpB >> 1;
             }
  	
-
+	PORTD = tmpCntA + tmpCntB;
     }
 
-	PORTD = tmpCntA + tmpCntB;
+	
     return 1;
 }
