@@ -23,8 +23,11 @@ int main(void) {
 
     /* Insert your solution below */
     while (1) {
-        fuelLvl = PINA;
+        fuelLvl = PINA & 0x0F;
 
+        if(fuelLvl == 0) {
+            tmpC = 0x00;
+        }
         if(fuelLvl == 0x1 || fuelLvl == 0x2) {
             tmpC = 0x60;
         }
