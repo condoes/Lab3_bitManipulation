@@ -18,28 +18,30 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRB = 0X00; PORTB = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00; 
-	unsigned char tmpCnt = 0x0;
+	unsigned char tmpCntA = 0x0;
+	unsigned char tmpCntB = 0x0;
 	unsigned char tmpA = 0x0;
 	unsigned char tmpB = 0x0;
 
-    /* Insert your solution below */
-    while (1) {
-        tmpA = PINA; 
+	tmpA = PINA; 
 	tmpB = PINB;
+
+    /* Insert your solution below */
+    while (tmpA != 0x0 && tmpB != 0x0) {
         
             if((tmpA & 0x01) == 0x1) {
-                tmpCnt = tmpCnt + 0x1;
+                tmpCntA = tmpCntA + 0x1;
                 tmpA = tmpA >> 1;
             }	
  
             if((tmpB & 0x01) == 0x1) {
-                tmpCnt = tmpCnt + 0x1;
+                tmpCntB = tmpCntB + 0x1;
                 tmpB = tmpB >> 1;
             }
- 
-
-        PORTC = tmpCnt;
+ 	
 
     }
+
+	PORTD = tmpCntA + tmpCntB;
     return 1;
 }
