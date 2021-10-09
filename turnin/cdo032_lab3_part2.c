@@ -26,7 +26,7 @@ int main(void) {
         fuelLvl = PINA & 0x0F;
 
         if(fuelLvl == 0) {
-            tmpC = 0x00;
+            tmpC = 0x40;
         }
         if(fuelLvl == 0x1 || fuelLvl == 0x2) {
             tmpC = 0x60;
