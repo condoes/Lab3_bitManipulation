@@ -36,7 +36,7 @@ int main(void) {
                 tmpCnt = tmpCnt + 0x1;
                 tmpB = tmpB >> 1;
             }
-        }
+ 
 
         PORTC = tmpCnt;
 
