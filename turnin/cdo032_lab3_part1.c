@@ -18,8 +18,7 @@ int main(void) {
 	DDRA = 0x00; PORTA = 0xFF;
 	DDRB = 0X00; PORTB = 0xFF;
 	DDRC = 0xFF; PORTC = 0x00; 
-	unsigned char tmpCntA = 0x0;
-	unsigned char tmpCntB = 0x0;
+	unsigned char tmpCnt = 0x0;
 	unsigned char tmpA = 0x0;
 	unsigned char tmpB = 0x0;
 
@@ -28,18 +27,26 @@ int main(void) {
 
 	tmpA = PINA; 
 	tmpB = PINB;
-        
-            if((tmpA & 0x01) == 0x1) {
-                tmpCntA = tmpCntA + 0x1;
-                tmpA = tmpA >> 1;
-            }	
+
+	for(unsigned i = 0; i < 8; i++) {
+		if((tmpA & 0x01) == 0x1) {
+                tmpCnt = tmpCnt + 1;
+                
+            	}
+			
  
-            if((tmpB & 0x01) == 0x1) {
-                tmpCntB = tmpCntB + 0x1;
-                tmpB = tmpB >> 1;
-            }
+            	if((tmpB & 0x01) == 0x1) {
+                tmpCnt = tmpCnt + 1;
+  
+            	}
+
+		tmpA = tmpA >> 1;
+		tmpB = tmpB >> 1;
+	}
+        
+            
  	
-	PORTD = tmpCntA + tmpCntB;
+	PORTD = tmpCnt;
     }
 
 	
