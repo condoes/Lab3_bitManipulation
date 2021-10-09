@@ -27,13 +27,13 @@ int main(void) {
         tmpA = PINA; 
 	tmpB = PINB;
         
-        if(tmpA != 0x00) {
+        while(tmpA != 0x00) {
             if((tmpA & 0x01) == 1) {
                 tmpCnt = tmpCnt + 0x1;
                 tmpA = tmpA >> 1;
             }	
         }
-        if(tmpB != 0x00) {
+        while(tmpB != 0x00) {
             if((tmpB & 0x01) == 1) {
                 tmpCnt = tmpCnt + 0x1;
                 tmpB = tmpB >> 1;
